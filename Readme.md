@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/SyntaxHighlightSimple/Form1.cs) (VB: [Form1.vb](./VB/SyntaxHighlightSimple/Form1.vb))
+<!-- default file list end -->
 # Syntax highlighting for C# and VB code using DevExpress CodeParser and Syntax Highlight tokens
 
 
