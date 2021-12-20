@@ -14,7 +14,7 @@ Namespace SyntaxHighlightApp
         Inherits DevExpress.XtraEditors.XtraForm
 
         Public Sub New()
-            Dim path As String = "Form1.cs"
+            Dim path As String = "Form1.vb"
             InitializeComponent()
             ' Use service substitution to register a custom service that implements syntax highlighting.
             richEditControl1.ReplaceService(Of ISyntaxHighlightService)(New MySyntaxHighlightService(richEditControl1))
