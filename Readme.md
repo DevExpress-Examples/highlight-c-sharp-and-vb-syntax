@@ -3,19 +3,30 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E2993)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Form1.cs](./CS/SyntaxHighlightSimple/Form1.cs) (VB: [Form1.vb](./VB/SyntaxHighlightSimple/Form1.vb))
-<!-- default file list end -->
-# Syntax highlighting for C# and VB code using DevExpress CodeParser and Syntax Highlight tokens
+# Rich Text Editor for WinForms - Implement ISyntaxHighlightService to Highlight C# and VB Code Syntax
+
+The [Rich Text Editor](https://docs.devexpress.com/WindowsForms/4946/controls-and-libraries/rich-text-editor) supports [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) that allows you to implement syntax highlighting for a document displayed in the control. This example demonstrates how to create a custom [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) implementation to highlight the example’s source code (C# and VB). The project uses the **DevExpress CodeParser** library to parse the code into tokens according to the syntax elements of the programming language.
+
+![Rich Text Editor - Highlight Code Syntax](./images/rich-text-editor-highlight-code-syntax.png)
+
+## Implementation Details
+
+1.	Declare a custom class that implements [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService). In the class constructor, specify colors for different code element categories (keywords, comments, strings, and so on). This example uses colors of the current application skin.
+2.	Implement the [ISyntaxHighlightService.Execute](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService.Execute) method. Within the method, use parsers from the **DevExpress CodeParser** library to parse C# and VB source code into tokens.
+3.	Convert tokens to the [SyntaxHighlightToken](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken) objects and specify format settings for each token. 
+4.	Pass the list of [SyntaxHighlightToken](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken) objects to the [SubDocument.ApplySyntaxHighlight](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight(System.Collections.Generic.List-DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken-)) method to apply syntax highlighting to the document. 
+5.	Use the [RichEditControl.ReplaceService\<T>](https://docs.devexpress.com/WindowsForms/DevExpress.XtraRichEdit.RichEditControl.ReplaceService--1(--0)) method to register your [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) implementation.
 
 
-<p>This example demonstrates the use of the <strong>ISyntaxHighlightService </strong>to display source code of this example in different colors and fonts according to the category of terms. To accomplish this, the text is parsed into tokens according to language syntax elements. The project uses DevExpress parsers for C# and VB, available in the  <strong>DevExpress.CodeParser</strong> library. Resulting tokens are converted into <strong>SyntaxHighlightToken </strong>objects and format settings for different token types are specified. The <strong>DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight</strong> method applies formatting to document ranges corresponding to the tokens.</p><p><strong>See also</strong><strong>:<br />
-</strong>
-<a href="https://docs.devexpress.com/WindowsForms/12107/controls-and-libraries/rich-text-editor/syntax-highlighting">Syntax Highlighting</a>  <br/>
-<a href="https://www.devexpress.com/Support/Center/p/E4139">E4139: How to implement T-SQL language syntax highlighting by creating Syntax Highlight Tokens manually</a><strong> </strong></p>
+## Files to Look At
 
-<br/>
+[Form1.cs](./CS/SyntaxHighlightApp/Form1.cs) (VB: [Form1.vb](./VB/SyntaxHighlightApp/Form1.vb))
 
+## Documentation
 
+[Highlight Document Syntax](https://docs.devexpress.com/WindowsForms/12107/controls-and-libraries/rich-text-editor/examples/automation/how-to-highlight-document-syntax)
+
+## More Examples
+
+[How to Create Syntax Highlight Tokens to Highlight T-SQL Language Syntax](https://supportcenter.devexpress.com/ticket/details/e4139/how-to-implement-t-sql-language-syntax-highlighting-by-creating-syntax-highlight-tokens)
