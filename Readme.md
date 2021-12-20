@@ -16,7 +16,7 @@ The [Rich Text Editor](https://docs.devexpress.com/WindowsForms/4946/controls-an
 2.	Implement the [ISyntaxHighlightService.Execute](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService.Execute) method. Within the method, use parsers from the **DevExpress CodeParser** library to parse C# and VB source code into tokens.
 3.	Convert tokens to the [SyntaxHighlightToken](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken) objects and specify format settings for each token. 
 4.	Pass the list of [SyntaxHighlightToken](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken) objects to the [SubDocument.ApplySyntaxHighlight](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight(System.Collections.Generic.List-DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken-)) method to apply syntax highlighting to the document. 
-5.	Use the [RichEditControl.ReplaceService<T>](https://docs.devexpress.com/WindowsForms/DevExpress.XtraRichEdit.RichEditControl.ReplaceService--1(--0)) method to register your [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) implementation.
+5.	Use the [RichEditControl.ReplaceService\<T>](https://docs.devexpress.com/WindowsForms/DevExpress.XtraRichEdit.RichEditControl.ReplaceService--1(--0)) method to register your [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) implementation.
 
 
 ## Files to Look At
