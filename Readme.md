@@ -21,7 +21,7 @@ The [Rich Text Editor](https://docs.devexpress.com/WindowsForms/4946/controls-an
 
 ## Files to Look At
 
-[Form1.cs](./CS/SyntaxHighlightSimple/Form1.cs) (VB: [Form1.vb](./VB/SyntaxHighlightSimple/Form1.vb))
+[Form1.cs](./CS/SyntaxHighlightApp/Form1.cs) (VB: [Form1.vb](./VB/SyntaxHighlightApp/Form1.vb))
 
 ## Documentation
 
