@@ -16,6 +16,8 @@ namespace SyntaxHighlightApp
         {
             string path = "Form1.cs";
             InitializeComponent();
+            richEditControl1.RemoveShortcutKey(System.Windows.Forms.Keys.Enter, System.Windows.Forms.Keys.Shift);
+
             // Use service substitution to register a custom service that implements syntax highlighting.
             richEditControl1.ReplaceService<ISyntaxHighlightService>(new MySyntaxHighlightService(richEditControl1));
             richEditControl1.LoadDocument(path);

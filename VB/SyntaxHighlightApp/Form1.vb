@@ -16,6 +16,8 @@ Namespace SyntaxHighlightApp
         Public Sub New()
             Dim path As String = "Form1.vb"
             InitializeComponent()
+            richEditControl1.RemoveShortcutKey(System.Windows.Forms.Keys.Enter, System.Windows.Forms.Keys.Shift)
+
             ' Use service substitution to register a custom service that implements syntax highlighting.
             richEditControl1.ReplaceService(Of ISyntaxHighlightService)(New MySyntaxHighlightService(richEditControl1))
             richEditControl1.LoadDocument(path)
